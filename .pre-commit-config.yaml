@@ -1,0 +1,8 @@
+repos:
+- repo: local
+  hooks:
+    - id: freeze-requirements
+      name: Freeze requirements
+      entry: bash -c 'pip freeze > requirements.txt'
+      language: system
+      files: ^requirements\.txt$
