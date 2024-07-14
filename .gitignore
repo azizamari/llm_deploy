@@ -5,3 +5,5 @@ __pycache__/
 .env.dev
 .env.prod
 mlflow.db
+mlruns/
+openai_model/

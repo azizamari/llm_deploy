@@ -1,4 +1,4 @@
-from fastapi import FastAPI, BackgroundTasks
+from fastapi import FastAPI, BackgroundTasks, Response
 from celery.result import AsyncResult
 from celery import Celery
 import config
@@ -40,3 +40,13 @@ def get_status(task_id: str):
             "status": str(result.info),  # this is the exception raised
         }
     return response
+
+
+@app.post("/llm-inference")
+async def trigger_llm_inference(background_tasks: BackgroundTasks, response: Response):
+    # Initiate LLM inference task asynchronously using celery_app
+    task = celery_app.send_task('celery_worker.tasks.llm_inference')
+
+    # You can do other operations here while waiting for task completion
+
+    return {"task_id": task.id}
