@@ -1,0 +1,3 @@
+pip install bitsandbytes
+pip install transformers
+setup mlflow code 

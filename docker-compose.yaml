@@ -23,3 +23,13 @@ services:
     image: "redis:latest"
     ports:
       - "6379:6379"
+
+
+  mlflow:
+    image: mlflow:latest
+    ports:
+      - "5000:5000"
+    command: ["mlflow", "server", "--backend-store-uri", "sqlite:///mlflow.db", "--default-artifact-root", "./mlruns"]
+    volumes:
+      - ./mlflow.db:/mlflow.db
+      - ./mlruns:/mlruns
