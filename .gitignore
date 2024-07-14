@@ -7,3 +7,4 @@ __pycache__/
 mlflow.db
 mlruns/
 openai_model/
+__pycache__/*

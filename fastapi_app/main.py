@@ -44,9 +44,7 @@ def get_status(task_id: str):
 
 @app.post("/llm-inference")
 async def trigger_llm_inference(background_tasks: BackgroundTasks, response: Response):
-    # Initiate LLM inference task asynchronously using celery_app
     task = celery_app.send_task('celery_worker.tasks.llm_inference')
 
-    # You can do other operations here while waiting for task completion
 
     return {"task_id": task.id}

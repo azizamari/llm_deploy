@@ -9,6 +9,5 @@ def add(x, y):
 
 @celery_app.task
 def llm_inference():
-    # Example: Simulate LLM inference process
-    time.sleep(5)  # Replace with actual LLM inference logic
-    return "LLM inference completed."
+    # fetch model from mlflow model registry and perform inference
+    pass
