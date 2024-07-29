@@ -1,5 +1,7 @@
 # LLM Deployment with FastAPI, Celery, Redis, and MLflow
 
+![image](https://github.com/user-attachments/assets/8b929152-4f63-4774-a434-cf462a813f13)
+
 This project demonstrates how to deploy a Large Language Model (LLM) as an API using FastAPI, Celery, and Redis, while leveraging MLflow for model registry and Hugging Face for model sourcing. The setup includes Docker configurations to run FastAPI, Celery, and Redis as separate containers.
 
 ## Prerequisites
@@ -32,3 +34,5 @@ docker-compose up --build
 2. **Access the FastAPI Documentation**
 
 Open your browser and navigate to http://localhost:8000/docs to access the FastAPI interactive API documentation.
+
+
